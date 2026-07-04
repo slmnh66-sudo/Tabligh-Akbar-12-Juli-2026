@@ -286,6 +286,101 @@ body {
     box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
 
+/* ===== TENTANG - LOKASI & MAPS ===== */
+.tentang-lokasi {
+    margin: 50px 0 40px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    text-align: center;
+}
+
+.tentang-lokasi h3 {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+    color: #0f2b3d;
+}
+
+.tentang-lokasi p {
+    color: #475569;
+}
+
+.map-container {
+    margin-top: 16px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ===== TENTANG - KONTAK PANITIA ===== */
+.tentang-kontak-panitia {
+    margin: 40px 0;
+    padding: 30px;
+    background: #f1f5f9;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.tentang-kontak-panitia h3 {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+    color: #0f2b3d;
+}
+
+.tentang-kontak-panitia > p {
+    color: #475569;
+    margin-bottom: 16px;
+}
+
+.kontak-grid-mini {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+}
+
+.kontak-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    padding: 14px 18px;
+    border-radius: 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    justify-content: center;
+}
+
+.kontak-card .icon {
+    font-size: 1.4rem;
+}
+
+.kontak-card a {
+    color: #0f2b3d;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.kontak-card a:hover {
+    color: #facc15;
+}
+
+.tentang-kontak-panitia .note {
+    margin-top: 12px;
+    color: #475569;
+}
+
+.tentang-kontak-panitia .note a {
+    color: #0f2b3d;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.tentang-kontak-panitia .note a:hover {
+    color: #facc15;
+}
+
+/* ===== TENTANG - DONATUR RINGKASAN ===== */
 .tentang-donatur {
     margin-top: 50px;
     padding: 30px;
@@ -297,6 +392,16 @@ body {
 .tentang-donatur h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
+    color: #0f2b3d;
+}
+
+.tentang-donatur p {
+    color: #1e293b;
+}
+
+.tentang-donatur .progress-bar {
+    max-width: 400px;
+    margin: 12px auto;
 }
 
 /* ===== DONASI ===== */
@@ -458,6 +563,12 @@ table tr:hover {
     box-shadow: 0 4px 16px rgba(0,0,0,0.06);
 }
 
+.kontak-info h2,
+.kontak-cash h2 {
+    color: #0f2b3d;
+    margin-bottom: 16px;
+}
+
 .kontak-item {
     display: flex;
     align-items: center;
@@ -497,6 +608,12 @@ table tr:hover {
     max-width: 100%;
 }
 
+.kontak-rekening h2 {
+    text-align: center;
+    color: #0f2b3d;
+    margin-bottom: 16px;
+}
+
 /* ===== FOOTER ===== */
 footer {
     background: #0f2b3d;
@@ -506,8 +623,30 @@ footer {
     margin-top: 20px;
 }
 
-/* ===== RESPONSIVE ===== */
+/* ============================================================
+   ===== RESPONSIVE =====
+   ============================================================ */
+
+/* Tablet & Mobile besar */
+@media (max-width: 992px) {
+    .tentang-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .tentang-image {
+        order: -1;
+    }
+
+    .tentang-image img {
+        max-height: 400px;
+        object-fit: cover;
+    }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
+    /* Navbar */
     .nav-menu {
         display: none;
         flex-direction: column;
@@ -518,6 +657,7 @@ footer {
         width: 100%;
         padding: 20px;
         gap: 16px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     }
 
     .nav-menu.open {
@@ -528,6 +668,11 @@ footer {
         display: flex;
     }
 
+    /* Hero */
+    .hero {
+        min-height: 60vh;
+    }
+
     .hero h1 {
         font-size: 2rem;
     }
@@ -536,25 +681,239 @@ footer {
         font-size: 1.1rem;
     }
 
+    .hero-info {
+        font-size: 0.95rem;
+        padding: 12px 20px;
+    }
+
+    /* Stats */
     .stats-grid {
         grid-template-columns: 1fr 1fr;
-    }
-
-    .tentang-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .kontak-grid {
-        grid-template-columns: 1fr;
+        gap: 16px;
     }
 
     .stat-number {
         font-size: 1.5rem;
     }
+
+    /* Tentang */
+    .tentang-content {
+        padding: 30px 0;
+    }
+
+    .tentang-text h2 {
+        font-size: 1.6rem;
+    }
+
+    .tentang-lokasi {
+        padding: 20px;
+        margin: 30px 0;
+    }
+
+    .tentang-lokasi h3 {
+        font-size: 1.3rem;
+    }
+
+    .map-container iframe {
+        height: 250px;
+    }
+
+    .tentang-kontak-panitia {
+        padding: 20px;
+        margin: 30px 0;
+    }
+
+    .tentang-kontak-panitia h3 {
+        font-size: 1.3rem;
+    }
+
+    .kontak-grid-mini {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .kontak-card {
+        justify-content: flex-start;
+        padding: 12px 16px;
+    }
+
+    .tentang-donatur {
+        padding: 20px;
+        margin-top: 30px;
+    }
+
+    .tentang-donatur h3 {
+        font-size: 1.2rem;
+    }
+
+    /* Donasi */
+    .donasi-rekening {
+        padding: 30px 0;
+    }
+
+    .rekening-box {
+        padding: 20px;
+        margin: 0 auto 30px;
+    }
+
+    .highlight {
+        font-size: 1.2rem;
+        padding: 2px 12px;
+    }
+
+    .donasi-cash {
+        padding: 20px;
+    }
+
+    /* Tabel Donatur */
+    .daftar-donatur {
+        padding: 30px 0;
+    }
+
+    .daftar-donatur h2 {
+        font-size: 1.6rem;
+    }
+
+    table {
+        font-size: 0.85rem;
+    }
+
+    table th,
+    table td {
+        padding: 8px 12px;
+    }
+
+    /* Kontak */
+    .kontak-content {
+        padding: 30px 0;
+    }
+
+    .kontak-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .kontak-info,
+    .kontak-cash {
+        padding: 20px;
+    }
+
+    /* Page Header */
+    .page-header {
+        padding: 30px 0 24px;
+    }
+
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+
+    /* Info Ringkas */
+    .info-ringkas {
+        padding: 40px 0;
+    }
+
+    .info-ringkas h2 {
+        font-size: 1.6rem;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 }
 
+/* Mobile kecil */
 @media (max-width: 480px) {
     .stats-grid {
         grid-template-columns: 1fr;
     }
+
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+
+    .hero-sub {
+        font-size: 1rem;
+    }
+
+    .hero-info {
+        font-size: 0.85rem;
+        padding: 10px 16px;
+    }
+
+    .btn-primary {
+        padding: 12px 28px;
+        font-size: 1rem;
+    }
+
+    .logo {
+        font-size: 1rem;
+    }
+
+    .logo-img {
+        height: 32px;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .rekening-info p {
+        font-size: 0.95rem;
+    }
+
+    .highlight {
+        font-size: 1rem;
+    }
+
+    .tentang-text ul li {
+        font-size: 0.95rem;
+    }
+
+    .map-container iframe {
+        height: 200px;
+    }
+
+    .kontak-card {
+        font-size: 0.9rem;
+    }
+
+    .kontak-card .icon {
+        font-size: 1.2rem;
+    }
+
+    .donasi-cash ul li {
+        font-size: 0.9rem;
+        padding: 6px 14px;
+    }
+
+    table {
+        font-size: 0.75rem;
+    }
+
+    table th,
+    table td {
+        padding: 6px 8px;
+    }
+}
+
+/* ===== UTILITY ===== */
+.text-center {
+    text-align: center;
+}
+
+.mt-16 {
+    margin-top: 16px;
+}
+
+.mt-24 {
+    margin-top: 24px;
+}
+
+.mb-16 {
+    margin-bottom: 16px;
+}
+
+.mb-24 {
+    margin-bottom: 24px;
 }
